@@ -50,7 +50,6 @@ if (!$result = $mysqli->query($sql)) {
 }
 
 $res = $result->fetch_assoc();
-echo $res['content'];
 		
 
 //header("Content-Type: text/html; charset=utf-8");?>
