@@ -39,17 +39,6 @@ if ($mysqli->connect_errno) {
     echo "Ошибка: " . $mysqli->connect_error . "\n";
     exit;
 }
-
-$sql = "SELECT * FROM users";
-if (!$result = $mysqli->query($sql)) {
-    echo "Ошибка: Наш запрос не удался и вот почему: \n";
-    echo "Запрос: " . $sql . "\n";
-    echo "Номер_ошибки: " . $mysqli->errno . "\n";
-    echo "Ошибка: " . $mysqli->error . "\n";
-    exit;
-}
-
-$res = $result->fetch_assoc();
 		
 
 //header("Content-Type: text/html; charset=utf-8");?>
@@ -62,7 +51,7 @@ $res = $result->fetch_assoc();
      $group = $_POST['groupa'];
      $registration = true;
      $res = "SELECT * FROM users WHERE `login` = '$login'";
-    $result = $mysqli->query($res)
+    $result = $mysqli->query($res);
 	 while($user=$result->fetch_assoc()){
         if(isset($user['id'])){
             $registration = false;
