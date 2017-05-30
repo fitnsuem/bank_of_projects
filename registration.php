@@ -28,8 +28,8 @@
 	<div id="content" style="height:500px">
 		<div id="reg">
 		<?php 
-$db = mysql_connect ("localhost","root","") or die(mysql_error());
-    mysql_select_db ("specseminar",$db);
+ $db = mysql_connect ("localhost:3306","web_5","RkErEszm3qTaSYVq") or die(mysql_error());
+        mysql_select_db ("web_5",$db);
 
 //header("Content-Type: text/html; charset=utf-8");?>
 <?
