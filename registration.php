@@ -68,11 +68,9 @@ $res = $result->fetch_assoc();
         }
     }
     if($registration !== false){
-        $result = $mysqli->query($query);
 	   $query  = "INSERT INTO users (`login`, `password`, `fio`, `course`, `groupa`) VALUES ('$login', '$password', '$FIO', $course, '$group')";
-
+	    $result = $mysqli->query($query);
         if($query) {
-            // setcookie("login", $login, time()+60*60*30); //куки на 30 минут
             echo "Вы зарегистрированны как $login";
             echo '<br><a href="index.php"> Авторизация</a>';
         }
