@@ -42,7 +42,7 @@ if ($mysqli->connect_errno) {
         if(isset($_POST['submit'])) {
             $login = $_POST['login'];
             $password = md5($_POST['password']);
-            $res = "SELECT * FROM users WHERE `login` = '$login' && `password` = '$password' ";
+            $res = "SELECT * FROM users WHERE `login` = '$login' AND `password` = '$password' ";
     	$result = $mysqli->query($res);
                 while($user = $result->fetch_assoc()){
                     if($user){
