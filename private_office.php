@@ -39,7 +39,7 @@ if ($mysqli->connect_errno) {
     echo "Ошибка: " . $mysqli->connect_error . "\n";
     exit;
 }
-
+?>
 
             <?if(!empty($_GET['auth'])){
                 session_destroy();
