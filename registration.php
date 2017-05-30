@@ -62,7 +62,8 @@ $res = $result->fetch_assoc();
      $group = $_POST['groupa'];
      $registration = true;
      $res = "SELECT * FROM users WHERE `login` = '$login'";
-    while($user = $mysqli->query($res)){
+    $result = $mysqli->query($res)
+	 while($user=$result->fetch_assoc()){
         if(isset($user['id'])){
             $registration = false;
         }
@@ -70,7 +71,7 @@ $res = $result->fetch_assoc();
     if($registration !== false){
 	   $query  = "INSERT INTO users (`login`, `password`, `fio`, `course`, `groupa`) VALUES ('$login', '$password', '$FIO', $course, '$group')";
 	    $result = $mysqli->query($query);
-        if($query) {
+        if($result) {
             echo "Вы зарегистрированны как $login";
             echo '<br><a href="index.php"> Авторизация</a>';
         }
