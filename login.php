@@ -38,25 +38,13 @@ if ($mysqli->connect_errno) {
     echo "Номер_ошибки: " . $mysqli->connect_errno . "\n";
     echo "Ошибка: " . $mysqli->connect_error . "\n";
     exit;
-}
-
-$sql = "SELECT * FROM users";
-if (!$result = $mysqli->query($sql)) {
-    echo "Ошибка: Наш запрос не удался и вот почему: \n";
-    echo "Запрос: " . $sql . "\n";
-    echo "Номер_ошибки: " . $mysqli->errno . "\n";
-    echo "Ошибка: " . $mysqli->error . "\n";
-    exit;
-}
-
-$query = $result->fetch_assoc();
-echo $query['content'];
-			
+}	
         if(isset($_POST['submit'])) {
             $login = $_POST['login'];
             $password = md5($_POST['password']);
-            $query = mysql_query("SELECT * FROM users WHERE `login` = '$login' AND `password` = '$password' ");
-                while($user = mysql_fetch_array($query)){
+            $res = "SELECT * FROM users WHERE `login` = '$login' && `password` = '$password' ";
+    	$result = $mysqli->query($res);
+                while($user = $result->fetch_assoc()){
                     if($user){
                         if(isset($user['id'])){
                             echo "Вы успешно зашли в систему!";
