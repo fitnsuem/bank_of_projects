@@ -61,14 +61,14 @@ $res = $result->fetch_assoc();
      $course = $_POST['course'];
      $group = $_POST['groupa'];
      $registration = true;
-     $res = mysql_query("SELECT * FROM users WHERE `login` = '$login'");
-    while($user = mysql_fetch_array($res)){
+     $res = "SELECT * FROM users WHERE `login` = '$login'";
+    while($user = $mysqli->query($res)){
         if(isset($user['id'])){
             $registration = false;
         }
     }
     if($registration !== false){
-        $query  = mysql_query("INSERT INTO users (`login`, `password`, `fio`, `course`, `groupa`) VALUES ('$login', '$password', '$FIO', $course, '$group')");
+        $query  = "INSERT INTO users (`login`, `password`, `fio`, `course`, `groupa`) VALUES ('$login', '$password', '$FIO', $course, '$group')";
 
         if($query) {
             // setcookie("login", $login, time()+60*60*30); //куки на 30 минут
