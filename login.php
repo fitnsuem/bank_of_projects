@@ -49,8 +49,8 @@ if (!$result = $mysqli->query($sql)) {
     exit;
 }
 
-$record = $result->fetch_assoc();
-echo $record['content'];
+$query = $result->fetch_assoc();
+echo $query['content'];
 			
         if(isset($_POST['submit'])) {
             $login = $_POST['login'];
