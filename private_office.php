@@ -40,28 +40,16 @@ if ($mysqli->connect_errno) {
     exit;
 }
 
-$sql = "SELECT * FROM users";
-if (!$result = $mysqli->query($sql)) {
-    echo "Ошибка: Наш запрос не удался и вот почему: \n";
-    echo "Запрос: " . $sql . "\n";
-    echo "Номер_ошибки: " . $mysqli->errno . "\n";
-    echo "Ошибка: " . $mysqli->error . "\n";
-    exit;
-}
 
-$res = $result->fetch_assoc();
-echo $res['content'];
-		
-
-//header("Content-Type: text/html; charset=utf-8");?>
             <?if(!empty($_GET['auth'])){
                 session_destroy();
             }?>
             <? if(isset($_SESSION['USER'])):?>
                 <p>Личный кабинет | <a href="index.php?auth=exit">Выйти</a></p>
 				 <? $id = $_SESSION['USER']['ID'];
-				 $res = mysql_query("SELECT * FROM users WHERE `id` = '$id'");
-    while($user = mysql_fetch_array($res)){
+				 $res = "SELECT * FROM users WHERE `id` = '$id'";
+		$result = $mysqli->query($res);
+	 	while($user=$result->fetch_assoc()){
         if(isset($user['id'])){
 				$login = $user['login'];
 				$FIO = $user['FIO'];
