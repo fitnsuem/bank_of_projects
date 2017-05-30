@@ -27,9 +27,31 @@
 	</div>
 	<div id="content" style="height:500px">
 		<div id="reg">
-		<?php 
- $db = mysql_connect ("localhost:3306","web_5","RkErEszm3qTaSYVq") or die(mysql_error());
-        mysql_select_db ("web_5",$db);
+		<?php
+
+$dbconfig = require('db_params.php');
+
+$mysqli = new mysqli($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['db']);
+
+if ($mysqli->connect_errno) {
+    echo "Ошибка: Не удалсь создать соединение с базой MySQL и вот почему: \n";
+    echo "Номер_ошибки: " . $mysqli->connect_errno . "\n";
+    echo "Ошибка: " . $mysqli->connect_error . "\n";
+    exit;
+}
+
+$sql = "SELECT * FROM users";
+if (!$result = $mysqli->query($sql)) {
+    echo "Ошибка: Наш запрос не удался и вот почему: \n";
+    echo "Запрос: " . $sql . "\n";
+    echo "Номер_ошибки: " . $mysqli->errno . "\n";
+    echo "Ошибка: " . $mysqli->error . "\n";
+    exit;
+}
+
+$record = $result->fetch_assoc();
+echo $record['content'];
+		
 
 //header("Content-Type: text/html; charset=utf-8");?>
 <?
