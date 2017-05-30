@@ -49,8 +49,8 @@ if (!$result = $mysqli->query($sql)) {
     exit;
 }
 
-$record = $result->fetch_assoc();
-echo $record['content'];
+$res = $result->fetch_assoc();
+echo $res['content'];
 		
 
 //header("Content-Type: text/html; charset=utf-8");?>
