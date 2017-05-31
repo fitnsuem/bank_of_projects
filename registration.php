@@ -50,8 +50,8 @@ if ($mysqli->connect_errno) {
      $course = $_POST['course'];
      $group = $_POST['groupa'];
      $registration = true;
-     $res = "SELECT * FROM users WHERE `login` = '$login'";
-    $result = $mysqli->query($res);
+     $query = "SELECT * FROM users WHERE `login` = '$login'";
+    $result = $mysqli->query($query);
 	 while($user=$result->fetch_assoc()){
         if(isset($user['id'])){
             $registration = false;
