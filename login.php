@@ -52,6 +52,7 @@ if ($mysqli->connect_errno) {
                              echo '<p>Здравствуйте, ', $login,'</p>';
 		              echo  '<p><a href="private_office.php">Войти в Личный кабинет</a></p>';
 				echo '<p><a href="index.php?auth=exit">Выйти</a></p>';
+				exit;
                         }
 			    
                     }
