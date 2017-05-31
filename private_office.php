@@ -47,8 +47,8 @@ if ($mysqli->connect_errno) {
             <? if(isset($_SESSION['USER'])):?>
                 <p>Личный кабинет | <a href="index.php?auth=exit">Выйти</a></p>
 				 <? $id = $_SESSION['USER']['ID'];
-				 $res = "SELECT * FROM users WHERE `id` = '$id'";
-		$result = $mysqli->query($res);
+				 $query = "SELECT * FROM users WHERE `id` = '$id'";
+		$result = $mysqli->query($query);
 	 	while($user=$result->fetch_assoc()){
         if(isset($user['id'])){
 				$login = $user['login'];
