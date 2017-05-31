@@ -28,7 +28,7 @@
 	<div id="content" style="height:500px">
 		<div id="aut">
         <?php
-
+a href="index.php?auth=exit">Выйти</a>
 $dbconfig = require('db_params.php');
 
 $mysqli = new mysqli($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['db']);
@@ -52,10 +52,10 @@ if ($mysqli->connect_errno) {
                                 'ID' => $user['id'],
                                 'LOGIN' => $user['login'],
                             );
-                             echo "<p>Здравствуйте, ", $_SESSION['USER']['LOGIN'],"</p>
-		                <p><a href="private_office.php">Войти в Личный кабинет</a></p>";
+                             echo '<p>Здравствуйте, ', $_SESSION['USER']['LOGIN'],'</p>
+		                <p><a href="private_office.php">Войти в Личный кабинет</a></p>';
                         }
-                        else echo "<p><a href="index.php">Данные были введены неверно! Попробуйте еще раз!</a></p>";
+                        else echo '<p><a href="index.php">Данные были введены неверно! Попробуйте еще раз!</a></p>';
                     }
 
                 }
