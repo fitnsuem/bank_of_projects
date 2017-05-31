@@ -54,20 +54,21 @@ if ($mysqli->connect_errno) {
 				echo '<p><a href="index.php?auth=exit">Выйти</a></p>';
                         }
 			else {
-				echo '<p><a href="index.php">Данные были введены неверно! Попробуйте еще раз!</a></p>';
+				echo '<a href="index.php">Данные были введены неверно! Попробуйте еще раз!</a>';
 				}
                     }
                         	
                 }
         }
-        ?>
+        php?>
 		
 
         </div>
 
     </div>
-    <div id="footer">
-    </div>
+   <div id="footer">
+<p><b>© 2016-2017 <a href="index.html" title="Сайт спецсеминаров НГУЭУ">Сайт спецсеминаров НГУЭУ</a> | Копирование материалов разрешено с указанием источника <a href="index.html" title="Сайт спецсеминаров НГУЭУ">Сайт спецсеминаров НГУЭУ</b></a></p>
+	</div>
 </div>
 </body>
 </html>
