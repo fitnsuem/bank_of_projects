@@ -29,9 +29,7 @@
 		<div id="aut">
 <?php       
 $dbconfig = require('db_params.php');
-
 $mysqli = new mysqli($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['db']);
-
 if ($mysqli->connect_errno) {
     echo "Ошибка: Не удалсь создать соединение с базой MySQL и вот почему: \n";
     echo "Номер_ошибки: " . $mysqli->connect_errno . "\n";
@@ -53,13 +51,15 @@ if ($mysqli->connect_errno) {
                             );
                              echo '<p>Здравствуйте, ', $login,'</p>';
 		              echo  '<p><a href="private_office.php">Войти в Личный кабинет</a></p>';
-			echo '<p><a href="index.php?auth=exit">Выйти</a></p>';
+				echo '<p><a href="index.php?auth=exit">Выйти</a></p>';
                         }
+			else {
+				echo '<p><a href="index.php">Данные были введены неверно! Попробуйте еще раз!</a></p>';
+				}
                     }
-                        else echo '<p><a href="index.php">Данные были введены неверно! Попробуйте еще раз!</a></p>';	
+                        	
                 }
         }
-
         ?>
 		
 
@@ -70,3 +70,4 @@ if ($mysqli->connect_errno) {
     </div>
 </div>
 </body>
+</html>
