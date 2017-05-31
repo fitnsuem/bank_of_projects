@@ -27,7 +27,7 @@
 	</div>
 	<div id="content" style="height:500px">
 		<div id="aut">
-        
+<?        
 $dbconfig = require('db_params.php');
 
 $mysqli = new mysqli($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['db']);
