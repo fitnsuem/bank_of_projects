@@ -53,11 +53,12 @@ if ($mysqli->connect_errno) {
 		              echo  '<p><a href="private_office.php">Войти в Личный кабинет</a></p>';
 				echo '<p><a href="index.php?auth=exit">Выйти</a></p>';
                         }
-			    echo '<p><a href="index.php">Вход не выполнен! Попробуйте снова!</a></p>';
+			    
                     }
                         	
                 }
         }
+			echo '<p><a href="index.php">Вход не выполнен! Попробуйте снова!</a></p>';
         ?>
 		
 
