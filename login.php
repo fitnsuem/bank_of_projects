@@ -60,7 +60,7 @@ if ($mysqli->connect_errno) {
                         	
                 }
         }
-        php?>
+        ?>
 		
 
         </div>
