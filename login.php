@@ -52,8 +52,8 @@ if ($mysqli->connect_errno) {
                                 'ID' => $user['id'],
                                 'LOGIN' => $user['login'],
                             );
-                             echo "<p>Здравствуйте, " <?=$_SESSION['USER']['LOGIN']?> "</p>
-		                a href="index.php?auth=exit">Выйти</a>
+                             echo "<p>Здравствуйте, ", $_SESSION['USER']['LOGIN'],"</p>
+		                <p><a href="private_office.php">Войти в Личный кабинет</a></p>";
                         }
                         else echo "<p><a href="index.php">Данные были введены неверно! Попробуйте еще раз!</a></p>";
                     }
