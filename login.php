@@ -39,8 +39,8 @@ if ($mysqli->connect_errno) {
         if(isset($_POST['submit'])) {
             $login = $_POST['login'];
             $password = md5($_POST['password']);
-            $res = "SELECT * FROM users WHERE `login` = '$login' AND `password` = '$password' ";
-    	$result = $mysqli->query($res);
+            $query = "SELECT * FROM users WHERE `login` = '$login' AND `password` = '$password' ";
+    	$result = $mysqli->query($query);
                 while($user = $result->fetch_assoc()){
                     if($user){
                         if(isset($user['id'])==true){
@@ -53,6 +53,7 @@ if ($mysqli->connect_errno) {
 		              echo  '<p><a href="private_office.php">Войти в Личный кабинет</a></p>';
 				echo '<p><a href="index.php?auth=exit">Выйти</a></p>';
                         }
+			    echo '<p><a href="index.php">Вход не выполнен! Попробуйте снова!</a></p>';
                     }
                         	
                 }
