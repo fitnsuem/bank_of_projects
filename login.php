@@ -59,7 +59,7 @@ if ($mysqli->connect_errno) {
                         	
                 }
         }
-			echo '<p><a href="index.php">Вход не выполнен! Попробуйте снова!</a></p>';
+			echo '<script>location.href="', $_SERVER['HTTP_REFERER'], '"</script>';
         ?>
 		
 
