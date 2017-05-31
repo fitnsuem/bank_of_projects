@@ -43,7 +43,7 @@ if ($mysqli->connect_errno) {
     	$result = $mysqli->query($query);
                 while($user = $result->fetch_assoc()){
                     if($user){
-                        if(isset($user['id'])==true){
+                        if(isset($user['id'])){
                             echo "Вы успешно зашли в систему!";
                             $_SESSION['USER']  = array(
                                 'ID' => $user['id'],
